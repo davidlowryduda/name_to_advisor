@@ -4,9 +4,50 @@
 This is a very simple python tool that reads a name or list of names, looks
 this name up on Math Genealogy, and then returns the advisors for that name.
 
-- If the given name doesn't give any matches, it raises an error.
-- If more than one match is returned, it raises an error and spits out a URL
-  for the page containing the matches.
+If the given name doesn't give any matches, it raises an error.
+
+
+## Example Usage ##
+
+Call something like
+
+    python cli.py "David Lowry-Duda"
+
+Alternately, make a file with one name per line, like
+
+    David Lowry-Duda
+    Isaac Newton
+    John Littlewood
+    Godfrey Hardy
+    NOTANAMEXXXX
+
+and call
+
+    python cli.py -f fname
+
+This should output
+
+    Note that we space out calls to MathGenealogy.
+    This might take a few moments.
+
+    David Lowry-Duda: Jeffrey Ezra Hoffstein
+    Isaac Newton: Isaac  Barrow and Benjamin  Pulleyn
+    John Littlewood: Ernest William Barnes
+    Godfrey Hardy: Augustus Edward Hough Love and Edmund Taylor Whittaker
+    Found NOTANAMEXXXX either 0 or 2+ times. Skipping.
+
+We deliberately space out requests sequentually, with pauses between requests,
+so as to not abuse MathGenealogy. When combined with buffered output, this call
+can take a little bit. But calls over 15 seconds cause an exception to be
+raised.
+
+
+## Code Quality ##
+
+The code is *fine*, not great, and actually parses the HTML pages of
+mathgenealogy. This is fundamentally fragile. But this has been stable in the
+last 10 years in my experience.
+
 
 
 ## Be kind to Math Genealogy ##

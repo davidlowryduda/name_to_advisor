@@ -27,6 +27,7 @@ def main():
     elif args.file:
         print("Note that we space out calls to MathGenealogy.")
         print("This might take a few moments.")
+        print()
         print_advisors_from_file(args.file)
 
 

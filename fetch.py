@@ -95,7 +95,7 @@ def find_id_for_name(name):
         'Submit': 'Search',
     }
     try:
-        response = requests.post(url, data=form_data, timeout=10)
+        response = requests.post(url, data=form_data, timeout=15)
         response.raise_for_status()
         # soup = BeautifulSoup(response.content, 'html.parser')
     except requests.exceptions.RequestException as e:
