@@ -11,7 +11,7 @@ If the given name doesn't give any matches, it raises an error.
 
 Call something like
 
-    python cli.py "David Lowry-Duda"
+    python -m name_to_advisor "David Lowry-Duda"
 
 Alternately, make a file with one name per line, like
 
@@ -23,7 +23,7 @@ Alternately, make a file with one name per line, like
 
 and call
 
-    python cli.py -f fname
+    python -m name_to_advisor -f fname
 
 This should output
 

@@ -1,5 +1,5 @@
 import argparse
-from fetch import get_advisors
+from .fetch import get_advisors
 import time
 
 
@@ -20,7 +20,7 @@ def main():
     if args.name:
         try:
             advisors = get_advisors(args.name)
-            print(name + ":", ' and '.join(advisors))
+            print(args.name + ":", ' and '.join(advisors))
         except KeyError as exception:
             print("Either none or 2+ names were found.")
             raise exception
