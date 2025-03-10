@@ -57,3 +57,10 @@ for the public to explore. **Don't abuse their openness.**
 
 This tool is not a good tool to try to scrape MathGenealogy. *Please don't use
 this to try to scrape MathGenealogy.*
+
+
+## Licensing ##
+
+There is little here and all true credit goes to MathGenealogy. But this code
+is available under the MIT License. A copy of this license is found here.
+Alternately, see https://opensource.org/license/mit.
