@@ -13,6 +13,9 @@ Call something like
 
     python -m name_to_advisor "David Lowry-Duda"
 
+This will prompt you for your MathGenealogy username and password. (You need to
+register at https://mathgenealogy.org:8000/api/v2/MGP/ to use this tool).
+
 Alternately, make a file with one name per line, like
 
     David Lowry-Duda
@@ -25,6 +28,9 @@ and call
 
     python -m name_to_advisor -f fname
 
+This will again prompt you for your username and password. (It really only
+makes sense to use this tool for batch processing lists).
+
 This should output
 
     Note that we space out calls to MathGenealogy.
@@ -33,8 +39,14 @@ This should output
     David Lowry-Duda: Jeffrey Ezra Hoffstein
     Isaac Newton: Isaac  Barrow and Benjamin  Pulleyn
     John Littlewood: Ernest William Barnes
-    Godfrey Hardy: Augustus Edward Hough Love and Edmund Taylor Whittaker
-    Found NOTANAMEXXXX either 0 or 2+ times. Skipping.
+    Problem with Godfrey Hardy. Skipping...
+    Problem with NOTANAMEXXXX. Skipping...
+
+    These are the names that were skipped:
+    Godfrey Hardy
+    NOTANAMEXXXX
+
+(The problem with Godfrey Hardy is that his MathGenealogy name is GH Hardy).
 
 We deliberately space out requests sequentually, with pauses between requests,
 so as to not abuse MathGenealogy. When combined with buffered output, this call
